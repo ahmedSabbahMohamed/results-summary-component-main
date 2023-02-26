@@ -1,0 +1,127 @@
+//import layouts
+@use './sass/layouts/globalRules' as *;
+@use './sass/layouts/normalize' as *;
+
+//import colors and fonts
+@use './sass/helpers/colors&fonts' as *;
+
+body {
+    font-size: 18px;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    font-family: 'Hanken Grotesk', Arial, Helvetica, sans-serif;
+}
+
+//start main
+.container {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 1px 1px 10px $lavandar;
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 10px 0;
+    .card {
+        width: 310px;
+        background-image: -moz-linear-gradient($backBlue, $backBlue2);
+        background-image: linear-gradient($backBlue, $backBlue2);
+        text-align: center;
+        padding: 20px 40px;
+        border-radius: 25px;
+        h1:nth-child(1) {
+            color: $lavandar;
+        }
+        .circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background: -moz-linear-gradient($violetCircle, $persianCircle);
+            background: linear-gradient($violetCircle, $persianCircle);
+            display: grid;
+            place-items: center;
+            h1 {
+                color: $white;
+                font-size: 80px;
+                font-weight: 800;
+            }
+            p {
+                color: $lavandar;
+                margin-top: -80px;
+            }
+        }
+        & > h1:nth-child(3) {
+            color: $white
+        }
+        p {
+            color: $lavandar;
+            padding: 0 30px;
+        }
+    }
+    .summary {
+        width: 310px;
+        padding: 20px 40px;
+        h1 {
+            color: $darkGray;
+            font-weight: 500;
+        }
+        .row {
+            width: calc(100%);
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            padding: 0 10px;
+            .left {
+                overflow: hidden;
+                span {
+                    float: left;
+                    margin: 0 5px;
+                }
+            }
+        }
+        .one {
+            color: $lightRed;
+            background-color: $backRed;
+        }
+        .two {
+            color: $orangeYellow;
+            background-color: $backYellow;
+        }
+        .three {
+            color: $green;
+            background-color: $backGreen;
+        }
+        .four {
+            color: $blue;
+            background-color: $backBlue3;
+        }
+        button {
+            color: $white;
+            width: 100%;
+            margin: 0 10px;
+            border: none;
+            border-radius: 25px;
+            padding: 15px;
+            background-color: $darkGray;
+            cursor: pointer;
+            &:hover {
+                background-color: $blue;
+            }
+        }
+    }
+}
+//end main
+
+// media query
+@media (max-width: 800px) {
+    .container {
+        margin: 10px;
+        flex-direction: column;
+        .card, .summary {
+            width: 280px;
+            text-align: center;
+        }
+    }
+}
